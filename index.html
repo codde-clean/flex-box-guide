@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Flexbox Guide</title>
+
+</head>
+<body>
+    <!-- Responsive Navigation -->
+    <nav class="navbar">
+        <div class="logo">FlexBox Guide</div>
+        
+        <!-- Regular menu -->
+        <ul class="nav-menu">
+            <li><a href="#container">Container</a></li>
+            <li><a href="#items">Items</a></li>
+            <li><a href="#examples">Examples</a></li>
+            <li><a href="#responsive">Responsive</a></li>
+        </ul>
+
+        <!-- Mobile menu -->
+        <ul class="nav-menu mobile" id="mobileMenu">
+            <li><a href="#container">Container</a></li>
+            <li><a href="#items">Items</a></li>
+            <li><a href="#examples">Examples</a></li>
+            <li><a href="#responsive">Responsive</a></li>
+        </ul>
+
+        <!-- Hamburger menu -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Complete Flexbox Properties Guide</h1>
+
+        <!-- Flex Container Properties -->
+        <div class="section" id="container">
+            <h2>Flex Container Properties</h2>
+            <p>These properties are applied to the parent container to create a flex layout.</p>
+
+            <h3>1. display: flex</h3>
+            <div class="code">/* Creates a flex container */
+.container {
+    display: flex; /* or inline-flex */
+}</div>
+            <div class="demo-container flex-basic">
+                <div class="demo-item">Item 1</div>
+                <div class="demo-item">Item 2</div>
+                <div class="demo-item">Item 3</div>
+            </div>
+
+            <h3>2. flex-direction</h3>
+            <div class="code">/* Controls the main axis direction */
+.container {
+    flex-direction: row; /* Default: left to right */
+    flex-direction: row-reverse; /* Right to left */
+    flex-direction: column; /* Top to bottom */
+    flex-direction: column-reverse; /* Bottom to top */
+}</div>
+            
+            <h4>flex-direction: row (default)</h4>
+            <div class="demo-container flex-row">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+            </div>
+
+            <h4>flex-direction: row-reverse</h4>
+            <div class="demo-container flex-row-reverse">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+            </div>
+
+            <h4>flex-direction: column</h4>
+            <div class="demo-container flex-column">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+            </div>
+
+            <h3>3. flex-wrap</h3>
+            <div class="code">/* Controls whether items wrap to new lines */
+.container {
+    flex-wrap: nowrap; /* Default: single line */
+    flex-wrap: wrap; /* Multi-line */
+    flex-wrap: wrap-reverse; /* Multi-line, reversed */
+}</div>
+
+            <h4>flex-wrap: wrap</h4>
+            <div class="demo-container flex-wrap">
+                <div class="demo-item">Item 1</div>
+                <div class="demo-item">Item 2</div>
+                <div class="demo-item">Item 3</div>
+                <div class="demo-item">Item 4</div>
+                <div class="demo-item">Item 5</div>
+                <div class="demo-item">Item 6</div>
+            </div>
+
+            <h3>4. justify-content</h3>
+            <div class="code">/* Aligns items along the main axis */
+.container {
+    justify-content: flex-start; /* Default: start */
+    justify-content: flex-end; /* End */
+    justify-content: center; /* Center */
+    justify-content: space-between; /* Space between items */
+    justify-content: space-around; /* Space around items */
+    justify-content: space-evenly; /* Equal space */
+}</div>
+
+            <h4>justify-content: center</h4>
+            <div class="demo-container justify-center">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+            </div>
+
+            <h4>justify-content: space-between</h4>
+            <div class="demo-container justify-between">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+            </div>
+
+            <h4>justify-content: space-evenly</h4>
+            <div class="demo-container justify-evenly">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+            </div>
+
+            <h3>5. align-items</h3>
+            <div class="code">/* Aligns items along the cross axis */
+.container {
+    align-items: stretch; /* Default: stretch to fill */
+    align-items: flex-start; /* Cross axis start */
+    align-items: flex-end; /* Cross axis end */
+    align-items: center; /* Cross axis center */
+    align-items: baseline; /* Text baseline */
+}</div>
+
+            <h4>align-items: center</h4>
+            <div class="demo-container align-center">
+                <div class="demo-item">Short</div>
+                <div class="demo-item">Tall<br>Item</div>
+                <div class="demo-item">Medium</div>
+            </div>
+
+            <h4>align-items: stretch</h4>
+            <div class="demo-container align-stretch">
+                <div class="demo-item">Stretch</div>
+                <div class="demo-item">To Fill</div>
+                <div class="demo-item">Height</div>
+            </div>
+
+            <h3>6. align-content</h3>
+            <div class="code">/* Aligns wrapped lines */
+.container {
+    flex-wrap: wrap;
+    align-content: flex-start; /* Lines at start */
+    align-content: flex-end; /* Lines at end */
+    align-content: center; /* Lines centered */
+    align-content: space-between; /* Space between lines */
+    align-content: space-around; /* Space around lines */
+    align-content: stretch; /* Lines stretch */
+}</div>
+
+            <h4>align-content: space-between</h4>
+            <div class="demo-container align-content-between">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+                <div class="demo-item">4</div>
+                <div class="demo-item">5</div>
+                <div class="demo-item">6</div>
+            </div>
+
+            <h3>7. gap</h3>
+            <div class="code">/* Adds space between items */
+.container {
+    gap: 1rem; /* Space between all items */
+    row-gap: 1rem; /* Space between rows */
+    column-gap: 2rem; /* Space between columns */
+}</div>
+
+            <h4>gap: 1rem</h4>
+            <div class="demo-container gap-example">
+                <div class="demo-item">1</div>
+                <div class="demo-item">2</div>
+                <div class="demo-item">3</div>
+            </div>
+        </div>
+
+        <!-- Flex Item Properties -->
+        <div class="section" id="items">
+            <h2>Flex Item Properties</h2>
+            <p>These properties are applied to individual flex items (children).</p>
+
+            <h3>1. order</h3>
+            <div class="code">/* Changes visual order without affecting HTML */
+.item {
+    order: 0; /* Default */
+    order: 1; /* Appears later */
+    order: -1; /* Appears earlier */
+}</div>
+
+            <div class="demo-container order-demo">
+                <div class="demo-item order-3">First in HTML (order: 3)</div>
+                <div class="demo-item order-1">Second in HTML (order: 1)</div>
+                <div class="demo-item order-2">Third in HTML (order: 2)</div>
+            </div>
+
+            <h3>2. flex-grow</h3>
+            <div class="code">/* How much item should grow */
+.item {
+    flex-grow: 0; /* Default: don't grow */
+    flex-grow: 1; /* Grow to fill space */
+    flex-grow: 2; /* Grow twice as much */
+}</div>
+
+            <div class="demo-container flex-grow-demo">
+                <div class="demo-item grow-0">grow: 0</div>
+                <div class="demo-item grow-1">grow: 1</div>
+                <div class="demo-item grow-2">grow: 2</div>
+            </div>
+
+            <h3>3. flex-shrink</h3>
+            <div class="code">/* How much item should shrink */
+.item {
+    flex-shrink: 1; /* Default: can shrink */
+    flex-shrink: 0; /* Don't shrink */
+    flex-shrink: 2; /* Shrink twice as much */
+}</div>
+
+            <div class="demo-container flex-shrink-demo">
+                <div class="demo-item shrink-0">shrink: 0</div>
+                <div class="demo-item shrink-1">shrink: 1</div>
+                <div class="demo-item shrink-2">shrink: 2</div>
+            </div>
+
+            <h3>4. flex-basis</h3>
+            <div class="code">/* Initial main size before free space is distributed */
+.item {
+    flex-basis: auto; /* Default: based on content */
+    flex-basis: 100px; /* Fixed size */
+    flex-basis: 50%; /* Percentage of container */
+}</div>
+
+            <div class="demo-container flex-basis-demo">
+                <div class="demo-item basis-auto">basis: auto</div>
+                <div class="demo-item basis-100">basis: 100px</div>
+                <div class="demo-item basis-50">basis: 50%</div>
+            </div>
+
+            <h3>5. flex (shorthand)</h3>
+            <div class="code">/* Shorthand for flex-grow, flex-shrink, flex-basis */
+.item {
+    flex: 0 1 auto; /* Default: don't grow, can shrink, auto basis */
+    flex: 1; /* Shorthand for 1 1 0% */
+    flex: auto; /* Shorthand for 1 1 auto */
+    flex: none; /* Shorthand for 0 0 auto */
+}</div>
+
+            <div class="demo-container flex-shorthand-demo">
+                <div class="demo-item flex-none">flex: none</div>
+                <div class="demo-item flex-1">flex: 1</div>
+                <div class="demo-item flex-2">flex: 2</div>
+            </div>
+
+            <h3>6. align-self</h3>
+            <div class="code">/* Overrides align-items for individual item */
+.item {
+    align-self: auto; /* Default: inherit from container */
+    align-self: flex-start; /* Align to start */
+    align-self: flex-end; /* Align to end */
+    align-self: center; /* Align to center */
+    align-self: stretch; /* Stretch to fill */
+}</div>
+
+            <div class="demo-container align-self-demo">
+                <div class="demo-item align-self-start">start</div>
+                <div class="demo-item align-self-center">center</div>
+                <div class="demo-item align-self-end">end</div>
+                <div class="demo-item align-self-stretch">stretch</div>
+            </div>
+        </div>
+
+        <!-- Practical Examples -->
+        <div class="section" id="examples">
+            <h2>Practical Examples</h2>
+
+            <h3>Perfect Centering</h3>
+            <div class="code">/* Center content both horizontally and vertically */
+.container {
+    display: flex;
+    justify-content: center; /* Horizontal center */
+    align-items: center; /* Vertical center */
+    height: 200px;
+}</div>
+
+            <div class="demo-container perfect-center">
+                <div class="centered-content">
+                    <h4>Perfectly Centered!</h4>
+                    <p>Both horizontally and vertically</p>
+                </div>
+            </div>
+
+            <h3>Responsive Grid</h3>
+            <div class="code">/* Responsive grid using flexbox */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.grid-item {
+    flex: 1 1 300px; /* Grow, shrink, min-width 300px */
+}</div>
+
+            <div class="demo-container responsive-grid">
+                <div class="grid-item">Card 1</div>
+                <div class="grid-item">Card 2</div>
+                <div class="grid-item">Card 3</div>
+                <div class="grid-item">Card 4</div>
+            </div>
+        </div>
+
+        <!-- Responsive Navigation Info -->
+        <div class="section" id="responsive">
+            <h2>Responsive Navigation (No Media Queries)</h2>
+            <p>The navigation above uses CSS Container Queries instead of media queries for responsive behavior. This modern approach allows components to respond to their own size rather than the viewport size.</p>
+            
+            <div class="code">/* Container queries for responsive behavior */
+.navbar {
+    container-type: inline-size; /* Enable container queries */
+}
+
+@container (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Show hamburger on small containers */
+    }
+    
+    .nav-menu:not(.mobile) {
+        display: none; /* Hide regular menu */
+    }
+}</div>
+
+            <p><strong>Key Features:</strong></p>
+            <ul style="margin-left: 2rem; margin-top: 1rem;">
+                <li><strong>Container Queries:</strong> Responds to container size, not viewport</li>
+                <li><strong>Flexbox Layout:</strong> Uses justify-content: space-between for layout</li>
+                <li><strong>Smooth Animations:</strong> CSS transitions for menu interactions</li>
+                <li><strong>Accessible:</strong> Keyboard navigation and proper focus management</li>
+                <li><strong>Modern Approach:</strong> No media queries needed!</li>
+            </ul>
+
+            <p style="margin-top: 1rem;"><em>Try resizing your browser window to see the responsive navigation in action!</em></p>
+        </div>
+    </div>
+
+    <script>
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            
+            // Animate hamburger lines
+            const spans = hamburger.querySelectorAll('span');
+            if (mobileMenu.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                const spans = hamburger.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans
